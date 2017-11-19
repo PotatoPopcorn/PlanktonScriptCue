@@ -68,31 +68,21 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="timeLayout">
+    <layout class="QHBoxLayout" name="jumpLayout">
      <item>
-      <widget class="QLabel" name="TimeLabel">
+      <widget class="QLabel" name="jumpLabel">
        <property name="text">
-        <string>Time</string>
+        <string>JumpToNext</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QLineEdit" name="timeEdit">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
-      </widget>
+      <widget class="QComboBox" name="jumpSelectBox"/>
      </item>
      <item>
-      <widget class="QCheckBox" name="infiniteTimeCheckBox">
-       <property name="enabled">
-        <bool>false</bool>
-       </property>
+      <widget class="QPushButton" name="editJumpButton">
        <property name="text">
-        <string>Infinite</string>
-       </property>
-       <property name="checked">
-        <bool>true</bool>
+        <string>Edit</string>
        </property>
       </widget>
      </item>
