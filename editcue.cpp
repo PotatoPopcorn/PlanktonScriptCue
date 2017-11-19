@@ -7,6 +7,9 @@ EditCue::EditCue(QWidget *parent) :
 {
     ui->setupUi(this);
     m_editArgs = new EditArguments();
+    ui->jumpSelectBox->addItem("None");
+    ui->jumpSelectBox->addItem("End of Program");
+    ui->jumpSelectBox->addItem("After Time");
 }
 
 EditCue::~EditCue()
