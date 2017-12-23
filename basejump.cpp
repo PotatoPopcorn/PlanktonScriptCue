@@ -34,6 +34,7 @@ void BaseJump::loadData(QJsonObject data){
 void BaseJump::startCue(){
 
 }
+
 void BaseJump::openSettings(){
 
 }

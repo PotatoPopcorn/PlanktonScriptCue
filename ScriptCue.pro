@@ -35,7 +35,8 @@ SOURCES += main.cpp\
     editargument.cpp \
     basejump.cpp \
     jumpnone.cpp \
-    jumphandler.cpp
+    jumphandler.cpp \
+    jumptimer.cpp
 
 HEADERS  += mainwindow.h \
     editcue.h \
@@ -48,7 +49,8 @@ HEADERS  += mainwindow.h \
     editargument.h \
     basejump.h \
     jumpnone.h \
-    jumphandler.h
+    jumphandler.h \
+    jumptimer.h
 
 FORMS    += mainwindow.ui \
     editcue.ui \

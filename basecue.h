@@ -5,6 +5,8 @@
 #include <QString>
 #include <QVector>
 
+#include "jumpnone.h"
+
 class BaseCue
 {
 public:
@@ -13,6 +15,7 @@ public:
     QString getName();
     QString getProgram();
     QVector<QString> getArguments();
+    BaseJump* getJumpSettingPtr();
 
     QString getDisplayName();
 
@@ -24,6 +27,7 @@ private:
     QString m_Name = "Untitled Cue";
     QString m_Program = "";
     QVector<QString> m_Arguments;
+    BaseJump *m_JumpSetting = new JumpNone;
 };
 
 #endif // BASECUE_H

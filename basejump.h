@@ -14,20 +14,20 @@ public:
     QString getIDName();
     QString getPublicName();
 
-    QString getDetails();
+    virtual QString getDetails();
 
     bool getHasEditPanel();
 
-    QJsonObject getSaveData();
-    void loadData(QJsonObject data);
+    virtual QJsonObject getSaveData();
+    virtual void loadData(QJsonObject data);
 
 
 signals:
     void nextCue();
 
 public slots:
-    void startCue();
-    void openSettings();
+    virtual void startCue();
+    virtual void openSettings();
 
 protected:
     QString m_idName = "NULL";

@@ -36,7 +36,9 @@ QString BaseCue::getDisplayName()
         ret.append(" ");
         ret.append(m_Arguments.at(i));
     }
-    ret.append(")");
+    ret.append(") [");
+    ret.append(m_JumpSetting->getDetails());
+    ret.append("]");
     return ret;
 }
 
@@ -64,4 +66,8 @@ void BaseCue::setCue(QString name, QString program, QVector<QString> arguments)
     setName(name);
     setProgram(program);
     setArguments(arguments);
+}
+
+BaseJump* BaseCue::getJumpSettingPtr(){
+    return m_JumpSetting;
 }
