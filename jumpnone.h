@@ -7,6 +7,7 @@ class JumpNone : public BaseJump
 {
 public:
     JumpNone();
+    QString getDetails();
 };
 
 #endif // JUMPNONE_H

@@ -6,6 +6,6 @@ JumpNone::JumpNone()
     m_idName = "NONE";
 }
 
-QString BaseJump::getDetails(){
+QString JumpNone::getDetails(){
     return "None";
 }
