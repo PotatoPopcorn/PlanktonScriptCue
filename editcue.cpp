@@ -8,8 +8,6 @@ EditCue::EditCue(QWidget *parent) :
     ui->setupUi(this);
     m_editArgs = new EditArguments();
     ui->jumpSelectBox->addItem("None");
-    ui->jumpSelectBox->addItem("End of Program");
-    ui->jumpSelectBox->addItem("After Time");
 }
 
 EditCue::~EditCue()
@@ -45,4 +43,13 @@ void EditCue::on_browseProgramButton_clicked()
 void EditCue::on_editArgument_clicked()
 {
     m_editArgs->exec();
+}
+
+void EditCue::on_jumpSelectBox_currentIndexChanged(const QString &mode)
+{
+    if(mode == "None"){
+        ui->editJumpButton->setEnabled(false);
+    }else{
+        ui->editJumpButton->setEnabled(true);
+    }
 }

@@ -29,6 +29,8 @@ private slots:
 
     void on_editArgument_clicked();
 
+    void on_jumpSelectBox_currentIndexChanged(const QString &mode);
+
 private:
     Ui::EditCue *ui;
     BaseCue m_Cue;

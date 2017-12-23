@@ -32,7 +32,10 @@ SOURCES += main.cpp\
     quickbuttonsedit.cpp \
     programhandler.cpp \
     editarguments.cpp \
-    editargument.cpp
+    editargument.cpp \
+    basejump.cpp \
+    jumpnone.cpp \
+    jumphandler.cpp
 
 HEADERS  += mainwindow.h \
     editcue.h \
@@ -42,7 +45,10 @@ HEADERS  += mainwindow.h \
     quickbuttonsedit.h \
     programhandler.h \
     editarguments.h \
-    editargument.h
+    editargument.h \
+    basejump.h \
+    jumpnone.h \
+    jumphandler.h
 
 FORMS    += mainwindow.ui \
     editcue.ui \

@@ -14,6 +14,8 @@
 #include "quickbuttonsedit.h"
 #include "settingsdialog.h"
 
+#include "jumpnone.h"
+
 namespace Ui {
 class MainWindow;
 }
