@@ -31,7 +31,12 @@ bool FileHandler::open(QVector<BaseCue> &cueList, QString path)
             QJsonObject argObject = argArray[j].toObject();
             cueArgs.append(argObject["argument"].toString());
         }
-        newCue.setCue(cueObject["name"].toString(), cueObject["program"].toString(), cueArgs);
+        newCue.setCue(
+                cueObject["name"].toString(),
+                cueObject["program"].toString(),
+                cueArgs,
+                cueObject["jump"].toString());
+        newCue.setJumpSettingData(cueObject["JumpProp"].toObject());
         cueList.append(newCue);
     }
     qDebug() << "Opened";
@@ -53,7 +58,7 @@ bool FileHandler::saveAs(QVector<BaseCue> &cueList, QString path)
 
     QJsonObject saveObject;
 
-    saveObject["version"] = "A1.1.0";
+    saveObject["version"] = "A1.3.0";
 
     QJsonArray cueArray;
     for(int i = 0; i < cueList.length(); i++)
@@ -71,6 +76,8 @@ bool FileHandler::saveAs(QVector<BaseCue> &cueList, QString path)
             argArray.append(argObject);
         }
         cueObject["arguemnts"] = argArray;
+        cueObject["jump"] = cue.getJumpSettingPtr()->getIDName();
+        cueObject["jumpProp"] = cue.getJumpSettingPtr()->getSaveData();
         cueArray.append(cueObject);
     }
     saveObject["cues"] = cueArray;
