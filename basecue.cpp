@@ -3,7 +3,9 @@
 //Empty Constructor
 BaseCue::BaseCue()
 {
-
+    procParent = new QObject();
+    process=new QProcess(procParent);
+    connect(m_JumpSetting, SIGNAL(nextCue()), this, SLOT(callNextCue()));
 }
 
 //Returns cue name
@@ -61,6 +63,9 @@ void BaseCue::setArguments(QVector<QString> arguments)
 }
 
 void BaseCue::setJumpModeID(QString jumpModeID){
+    if(jumpModeID == m_JumpSetting->getIDName()){
+        return;
+    }
     if(jumpModeID == "NONE")
     {
         m_JumpSetting = new JumpNone;
@@ -91,4 +96,26 @@ BaseJump* BaseCue::getJumpSettingPtr(){
 void BaseCue::setJumpSettingData(QJsonObject data){
     //m_JumpData = data;
     m_JumpSetting->loadData(data);
+}
+
+void BaseCue::startCue()
+{
+    QString procName = getProgram();
+    QStringList procArgs;
+    for(int i = 0; i < getArguments().length(); i++)
+    {
+        procArgs.append(getArguments().at(i));
+    }
+    process->start(procName, procArgs);
+}
+
+void BaseCue::endCue()
+{
+    process->terminate();
+    process->kill();
+}
+
+void BaseCue::callNextCue()
+{
+    emit nextCue();
 }

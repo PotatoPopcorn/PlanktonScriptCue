@@ -19,9 +19,9 @@ class FileHandler
 {
 public:
     FileHandler();
-    bool open(QVector<BaseCue> &cueList, QString path);
-    bool save(QVector<BaseCue> &cueList, QWidget *parent);
-    bool saveAs(QVector<BaseCue> &cueList, QString path);
+    bool open(QVector<BaseCue*> &cueList, QString path);
+    bool save(QVector<BaseCue*> &cueList, QWidget *parent);
+    bool saveAs(QVector<BaseCue*> &cueList, QString path);
 
     bool isFileOpen();
     QString getOpenFile();

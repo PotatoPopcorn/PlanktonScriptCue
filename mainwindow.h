@@ -10,7 +10,6 @@
 #include "basecue.h"
 #include "editcue.h"
 #include "filehandler.h"
-#include "programhandler.h"
 #include "quickbuttonsedit.h"
 #include "settingsdialog.h"
 
@@ -29,6 +28,9 @@ public:
     ~MainWindow();
 
 private slots:
+    void nextCue();
+    void prevCue();
+
     void on_editCueButton_clicked();
 
     void on_addCueButton_clicked();
@@ -62,14 +64,14 @@ private slots:
     void on_actionSave_As_triggered();
 
 private:
-    int m_activeCue = -1;
+    int m_activeCueNumber = -1;
 
     Ui::MainWindow *ui;
-    QVector<BaseCue> m_cues;
+    QVector<BaseCue*> m_cues;
 
+    BaseCue *m_activeCue;
     EditCue *m_editCue;
     FileHandler m_file;
-    ProgramHandler m_program;
     QuickButtonsEdit *m_quickButtonEdit;
     SettingsDialog *m_settings;
 

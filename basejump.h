@@ -6,8 +6,9 @@
 
 #include <QJsonObject>
 
-class BaseJump
+class BaseJump : public QObject
 {
+    Q_OBJECT
 public:
     BaseJump();
 
@@ -28,6 +29,7 @@ signals:
 public slots:
     virtual void startCue();
     virtual void openSettings();
+    virtual void stopCue();
 
 protected:
     QString m_idName = "NULL";

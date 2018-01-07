@@ -38,3 +38,7 @@ void BaseJump::startCue(){
 void BaseJump::openSettings(){
 
 }
+
+void BaseJump::stopCue(){
+
+}

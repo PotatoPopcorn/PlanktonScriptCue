@@ -30,13 +30,13 @@ SOURCES += main.cpp\
     settingsdialog.cpp \
     filehandler.cpp \
     quickbuttonsedit.cpp \
-    programhandler.cpp \
     editarguments.cpp \
     editargument.cpp \
     basejump.cpp \
     jumpnone.cpp \
     jumphandler.cpp \
-    jumptimer.cpp
+    jumptimer.cpp \
+    jumptimersettings.cpp
 
 HEADERS  += mainwindow.h \
     editcue.h \
@@ -44,17 +44,18 @@ HEADERS  += mainwindow.h \
     settingsdialog.h \
     filehandler.h \
     quickbuttonsedit.h \
-    programhandler.h \
     editarguments.h \
     editargument.h \
     basejump.h \
     jumpnone.h \
     jumphandler.h \
-    jumptimer.h
+    jumptimer.h \
+    jumptimersettings.h
 
 FORMS    += mainwindow.ui \
     editcue.ui \
     settingsdialog.ui \
     quickbuttonsedit.ui \
     editarguments.ui \
-    editargument.ui
+    editargument.ui \
+    jumptimersettings.ui

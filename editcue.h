@@ -21,8 +21,8 @@ public:
     explicit EditCue(QWidget *parent = 0);
     ~EditCue();
 
-    void setCue(BaseCue cue);
-    BaseCue getCue();
+    void setCue(BaseCue *cue);
+    BaseCue* getCue();
 
 private slots:
     void on_browseProgramButton_clicked();
@@ -31,9 +31,11 @@ private slots:
 
     void on_jumpSelectBox_currentIndexChanged(const QString &mode);
 
+    void on_editJumpButton_clicked();
+
 private:
     Ui::EditCue *ui;
-    BaseCue m_Cue;
+    BaseCue *m_Cue;
 
     EditArguments *m_editArgs;
 

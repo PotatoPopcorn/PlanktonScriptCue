@@ -16,29 +16,29 @@ EditCue::~EditCue()
     delete ui;
 }
 
-void EditCue::setCue(BaseCue cue)
+void EditCue::setCue(BaseCue *cue)
 {
     m_Cue = cue;
-    ui->nameEdit->setText(m_Cue.getName());
-    ui->programEdit->setText(m_Cue.getProgram());
-    m_editArgs->setArgs(m_Cue.getArguments());
-    if(m_Cue.getJumpSettingPtr()->getIDName() == "TIMER"){
+    ui->nameEdit->setText(m_Cue->getName());
+    ui->programEdit->setText(m_Cue->getProgram());
+    m_editArgs->setArgs(m_Cue->getArguments());
+    if(m_Cue->getJumpSettingPtr()->getIDName() == "TIMER"){
         ui->jumpSelectBox->setCurrentText("Timer");
     }else{
         ui->jumpSelectBox->setCurrentText("None");
     }
 }
 
-BaseCue EditCue::getCue()
+BaseCue* EditCue::getCue()
 {
     //TODO: Use pointers to optimise code
-    m_Cue.setName(ui->nameEdit->text());
-    m_Cue.setProgram(ui->programEdit->text());
-    m_Cue.setArguments(m_editArgs->getArgs()); //TODO Fix This
+    m_Cue->setName(ui->nameEdit->text());
+    m_Cue->setProgram(ui->programEdit->text());
+    m_Cue->setArguments(m_editArgs->getArgs()); //TODO Fix This
     if(ui->jumpSelectBox->currentText() == "Timer"){
-        m_Cue.setJumpModeID("TIMER");
+        m_Cue->setJumpModeID("TIMER");
     }else{
-        m_Cue.setJumpModeID("NONE");
+        m_Cue->setJumpModeID("NONE");
     }
     return m_Cue;
 }
@@ -66,4 +66,14 @@ void EditCue::on_jumpSelectBox_currentIndexChanged(const QString &mode)
     }else{
         qDebug() << "Edit Cue is incorrect";
     }
+}
+
+void EditCue::on_editJumpButton_clicked()
+{
+    if(ui->jumpSelectBox->currentText() == "Timer"){
+        m_Cue->setJumpModeID("TIMER");
+    }else{
+        m_Cue->setJumpModeID("NONE");
+    }
+    m_Cue->getJumpSettingPtr()->openSettings();
 }

@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    m_activeCue = new BaseCue();
 }
 
 MainWindow::~MainWindow()
@@ -15,24 +16,35 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::nextCue()
+{
+    setActiveCue(m_activeCueNumber +1);
+}
+
+void MainWindow::prevCue()
+{
+    setActiveCue(m_activeCueNumber -1);
+}
+
+
 //Re-render cuelist, used to keep vector the same as GUI
 void MainWindow::updateCuelist()
 {
     ui->cueListWidget->clear();
     for(int i = 0; i < m_cues.length(); i++)
     {   
-        ui->cueListWidget->addItem(QString(m_cues[i].getDisplayName()));
+        ui->cueListWidget->addItem(QString(m_cues[i]->getDisplayName()));
     }
-    if(m_cues.length() > m_activeCue+1 && m_activeCue != -1)
+    if(m_cues.length() > m_activeCueNumber+1 && m_activeCueNumber != -1)
     {
-        ui->cueListWidget->setCurrentRow(m_activeCue+1);
+        ui->cueListWidget->setCurrentRow(m_activeCueNumber+1);
         ui->cueListWidget->currentItem()->setTextColor(QColor(255, 127 ,0));
     }
-    if(m_cues.length() > m_activeCue && m_activeCue != -1)
+    if(m_cues.length() > m_activeCueNumber && m_activeCueNumber != -1)
     {
-        ui->cueListWidget->setCurrentRow(m_activeCue);
+        ui->cueListWidget->setCurrentRow(m_activeCueNumber);
         ui->cueListWidget->currentItem()->setTextColor(QColor(0,255,0));
-        ui->cueListWidget->setCurrentRow(m_activeCue);
+        ui->cueListWidget->setCurrentRow(m_activeCueNumber);
     }
 
     ui->editCueButton->setEnabled(false);
@@ -45,7 +57,18 @@ void MainWindow::updateCuelist()
 //Update Active Cue, Ensures appropriate buttons are up to date.
 void MainWindow::setActiveCue(int i)
 {
-    m_activeCue = i;
+    if(i > m_cues.length())
+    {
+        qDebug() << "WARN: Set Active Cue is Out of Bounds";
+        return;
+    }
+    m_activeCue->endCue();
+    m_activeCueNumber = i;
+    if(i >= 0)
+    {
+        m_activeCue = m_cues.at(m_activeCueNumber);
+        m_activeCue->startCue();
+    }
     updateCuelist();
     if(i == -1)
     {
@@ -81,7 +104,7 @@ void MainWindow::setActiveCue(int i)
 void MainWindow::on_editCueButton_clicked()
 {
     int cueNum = ui->cueListWidget->currentIndex().row();
-    BaseCue cue = m_cues.at(cueNum);
+    BaseCue *cue = m_cues.at(cueNum);
     m_editCue = new EditCue(this);
     m_editCue->setCue(cue);
     if(m_editCue->exec())
@@ -95,7 +118,7 @@ void MainWindow::on_addCueButton_clicked()
 {
     //TODO: Disable when playing
     //TODO: Add in selected position
-    BaseCue cue;
+    BaseCue *cue = new BaseCue;
     m_editCue = new EditCue(this);
     m_editCue->setCue(cue);
     if(m_editCue->exec())
@@ -130,7 +153,7 @@ void MainWindow::on_actionSettings_triggered()
 
 void MainWindow::on_cueListWidget_currentRowChanged(int currentRow)
 {
-    if(m_activeCue != -1){
+    if(m_activeCueNumber != -1){
         return;
     }
     else
@@ -188,28 +211,26 @@ void MainWindow::on_moveCueDownButton_clicked()
 
 void MainWindow::on_stopButton_clicked()
 {
-    m_program.stop();
+//    BaseCue *tCue = m_cues.at(m_activeCueNumber);
+//    tCue->endCue();
     setActiveCue(-1);
 }
 
 void MainWindow::on_startButton_clicked()
 {
     setActiveCue(ui->cueListWidget->currentRow());
-    m_program.run(m_cues.at(m_activeCue));
+//    BaseCue *uCue = m_cues.at(m_activeCueNumber);
+//    uCue->startCue();
 }
 
 void MainWindow::on_nextButton_clicked()
 {
-    setActiveCue(m_activeCue +1);
-    m_program.stop();
-    m_program.run(m_cues.at(m_activeCue));
+    nextCue();
 }
 
 void MainWindow::on_prevButton_clicked()
 {
-    setActiveCue(m_activeCue -1);
-    m_program.stop();
-    m_program.run(m_cues.at(m_activeCue));
+    prevCue();
 }
 
 void MainWindow::on_actionSave_triggered()

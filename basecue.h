@@ -2,14 +2,18 @@
 #define BASECUE_H
 
 #include <QDebug>
+#include <QObject>
+#include <QProcess>
 #include <QString>
+#include <QStringList>
 #include <QVector>
 
 #include "jumpnone.h"
 #include "jumptimer.h"
 
-class BaseCue
+class BaseCue : public QObject
 {
+    Q_OBJECT
 public:
     BaseCue();
 
@@ -26,6 +30,15 @@ public:
     void setArguments(QVector<QString> arguments);
     void setJumpModeID(QString jumpModeID);
     void setJumpSettingData(QJsonObject);
+
+signals:
+    void nextCue();
+
+public slots:
+    void startCue();
+    void callNextCue();
+    void endCue();
+
 private:
     QString m_Name = "Untitled Cue";
     QString m_Program = "";
@@ -33,6 +46,10 @@ private:
     BaseJump *m_JumpSetting = new JumpNone;
 
     QJsonObject m_JumpData;
+
+    QObject *procParent;
+    QProcess *process;
+
 };
 
 #endif // BASECUE_H
