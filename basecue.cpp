@@ -5,7 +5,6 @@ BaseCue::BaseCue()
 {
     procParent = new QObject();
     process=new QProcess(procParent);
-    connect(m_JumpSetting, SIGNAL(nextCue()), this, SLOT(callNextCue()));
 }
 
 //Returns cue name
@@ -78,6 +77,7 @@ void BaseCue::setJumpModeID(QString jumpModeID){
     {
         qDebug() << "Error with jump mode" << jumpModeID;
     }
+    connect(m_JumpSetting, SIGNAL(nextCue()), this, SLOT(callNextCue()));
 }
 
 //Changes all information about cue
@@ -107,10 +107,12 @@ void BaseCue::startCue()
         procArgs.append(getArguments().at(i));
     }
     process->start(procName, procArgs);
+    m_JumpSetting->startCue();
 }
 
 void BaseCue::endCue()
 {
+    m_JumpSetting->stopCue();
     process->terminate();
     process->kill();
 }

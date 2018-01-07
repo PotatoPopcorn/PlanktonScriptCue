@@ -24,7 +24,7 @@ public:
 
 
 signals:
-    void nextCue();
+    virtual void nextCue();
 
 public slots:
     virtual void startCue();

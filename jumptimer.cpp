@@ -6,7 +6,8 @@ JumpTimer::JumpTimer()
     m_idName = "TIMER";
 }
 
-void JumpTimer::timerDone(){
+void JumpTimer::timerDone()
+{
     emit nextCue();
 }
 
@@ -48,5 +49,5 @@ void JumpTimer::openSettings(){
 }
 
 void JumpTimer::stopCue(){
-
+    m_Timer->stop();
 }

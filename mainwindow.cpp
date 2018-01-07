@@ -9,6 +9,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     m_activeCue = new BaseCue();
+    connect(m_activeCue, SIGNAL(nextCue()), this, SLOT(nextCue()));
 }
 
 MainWindow::~MainWindow()
@@ -63,10 +64,12 @@ void MainWindow::setActiveCue(int i)
         return;
     }
     m_activeCue->endCue();
+    disconnect(m_activeCue, SIGNAL(nextCue()), this, SLOT(nextCue()));
     m_activeCueNumber = i;
     if(i >= 0)
     {
         m_activeCue = m_cues.at(m_activeCueNumber);
+        connect(m_activeCue, SIGNAL(nextCue()), this, SLOT(nextCue()));
         m_activeCue->startCue();
     }
     updateCuelist();
