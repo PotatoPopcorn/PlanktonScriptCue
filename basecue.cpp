@@ -81,12 +81,20 @@ void BaseCue::setJumpModeID(QString jumpModeID){
 }
 
 //Changes all information about cue
-void BaseCue::setCue(QString name, QString program, QVector<QString> arguments, QString jumpModeID)
+void BaseCue::setCue(
+        QString name,
+        QString program,
+        QVector<QString> arguments,
+        QString jumpModeID,
+        bool endOnNext,
+        bool jumpOnEnd)
 {
     setName(name);
     setProgram(program);
     setArguments(arguments);
     setJumpModeID(jumpModeID);
+    setEndOnNext(endOnNext);
+    setJumpOnEnd(jumpOnEnd);
 }
 
 BaseJump* BaseCue::getJumpSettingPtr(){
@@ -113,11 +121,41 @@ void BaseCue::startCue()
 void BaseCue::endCue()
 {
     m_JumpSetting->stopCue();
-    process->terminate();
-    process->kill();
+    if(m_EndOnNext)
+    {
+        process->terminate();
+        process->kill();
+    }
 }
 
 void BaseCue::callNextCue()
 {
     emit nextCue();
+}
+
+void BaseCue::finishedCue()
+{
+    if(m_JumpOnEnd){
+        emit nextCue();
+    }
+}
+
+bool BaseCue::getEndOnNext()
+{
+    return m_EndOnNext;
+}
+
+bool BaseCue::getJumpOnEnd()
+{
+    return m_JumpOnEnd;
+}
+
+void BaseCue::setEndOnNext(bool value)
+{
+    m_EndOnNext = value;
+}
+
+void BaseCue::setJumpOnEnd(bool value)
+{
+    m_JumpOnEnd = value;
 }

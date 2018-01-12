@@ -17,6 +17,8 @@ class BaseCue : public QObject
 public:
     BaseCue();
 
+    bool getEndOnNext();
+    bool getJumpOnEnd();
     QString getName();
     QString getProgram();
     QVector<QString> getArguments();
@@ -24,12 +26,14 @@ public:
 
     QString getDisplayName();
 
-    void setCue(QString name, QString program, QVector<QString> arguments, QString jumpModeID);
+    void setCue(QString name, QString program, QVector<QString> arguments, QString jumpModeID, bool endOnNext, bool jumpOnEnd);
     void setName(QString name);
     void setProgram(QString program);
     void setArguments(QVector<QString> arguments);
     void setJumpModeID(QString jumpModeID);
     void setJumpSettingData(QJsonObject);
+    void setEndOnNext(bool value);
+    void setJumpOnEnd(bool value);
 
 signals:
     void nextCue();
@@ -38,8 +42,12 @@ public slots:
     void startCue();
     void callNextCue();
     void endCue();
+    void finishedCue();
 
 private:
+    bool m_EndOnNext = true;
+    bool m_JumpOnEnd = false;
+
     QString m_Name = "Untitled Cue";
     QString m_Program = "";
     QVector<QString> m_Arguments;

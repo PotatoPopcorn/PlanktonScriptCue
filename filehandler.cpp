@@ -35,7 +35,7 @@ bool FileHandler::open(QVector<BaseCue*> &cueList, QString path)
                 cueObject["name"].toString(),
                 cueObject["program"].toString(),
                 cueArgs,
-                cueObject["jump"].toString());
+                cueObject["jump"].toString(), true, false);
         newCue->setJumpSettingData(cueObject["jumpProp"].toObject());
         cueList.append(newCue);
     }
