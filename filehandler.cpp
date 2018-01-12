@@ -35,7 +35,9 @@ bool FileHandler::open(QVector<BaseCue*> &cueList, QString path)
                 cueObject["name"].toString(),
                 cueObject["program"].toString(),
                 cueArgs,
-                cueObject["jump"].toString(), true, false);
+                cueObject["jump"].toString(),
+                cueObject["endOnNext"].toBool(true),
+                cueObject["jumpOnEnd"].toBool());
         newCue->setJumpSettingData(cueObject["jumpProp"].toObject());
         cueList.append(newCue);
     }
@@ -78,6 +80,8 @@ bool FileHandler::saveAs(QVector<BaseCue*> &cueList, QString path)
         cueObject["arguemnts"] = argArray;
         cueObject["jump"] = cue->getJumpSettingPtr()->getIDName();
         cueObject["jumpProp"] = cue->getJumpSettingPtr()->getSaveData();
+        cueObject["endOnNext"] = cue->getEndOnNext();
+        cueObject["jumpOnEnd"] = cue->getJumpOnEnd();
         cueArray.append(cueObject);
     }
     saveObject["cues"] = cueArray;
