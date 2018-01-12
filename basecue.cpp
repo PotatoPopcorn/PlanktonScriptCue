@@ -39,7 +39,10 @@ QString BaseCue::getDisplayName()
     }
     ret.append(") [");
     ret.append(m_JumpSetting->getDetails());
-    ret.append("]");
+    ret.append("] { ");
+    if(m_EndOnNext) ret.append(("E "));
+    if(m_JumpOnEnd) ret.append(("J "));
+    ret.append("}");
     return ret;
 }
 
