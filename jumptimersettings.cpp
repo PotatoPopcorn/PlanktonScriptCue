@@ -21,3 +21,13 @@ void JumpTimerSettings::setTime(float time)
 float JumpTimerSettings::getTime(){
     return (float) ui->timeInput->value();
 }
+
+void JumpTimerSettings::setShowUI(bool value)
+{
+    ui->showUIBox->setChecked(value);
+}
+
+bool JumpTimerSettings::getShowUI()
+{
+    return (ui->showUIBox->checkState() == 2);
+}

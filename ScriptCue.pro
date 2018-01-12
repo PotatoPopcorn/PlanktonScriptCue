@@ -36,7 +36,8 @@ SOURCES += main.cpp\
     jumpnone.cpp \
     jumphandler.cpp \
     jumptimer.cpp \
-    jumptimersettings.cpp
+    jumptimersettings.cpp \
+    jumptimerwindow.cpp
 
 HEADERS  += mainwindow.h \
     editcue.h \
@@ -50,7 +51,8 @@ HEADERS  += mainwindow.h \
     jumpnone.h \
     jumphandler.h \
     jumptimer.h \
-    jumptimersettings.h
+    jumptimersettings.h \
+    jumptimerwindow.h
 
 FORMS    += mainwindow.ui \
     editcue.ui \
@@ -58,4 +60,5 @@ FORMS    += mainwindow.ui \
     quickbuttonsedit.ui \
     editarguments.ui \
     editargument.ui \
-    jumptimersettings.ui
+    jumptimersettings.ui \
+    jumptimerwindow.ui

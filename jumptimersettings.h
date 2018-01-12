@@ -16,7 +16,9 @@ public:
     ~JumpTimerSettings();
 
     void setTime(float time);
+    void setShowUI(bool value);
     float getTime();
+    bool getShowUI();
 
 private:
     Ui::JumpTimerSettings *ui;

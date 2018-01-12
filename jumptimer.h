@@ -6,6 +6,7 @@
 
 #include "basejump.h"
 #include "jumptimersettings.h"
+#include "jumptimerwindow.h"
 
 class JumpTimer : public BaseJump
 {
@@ -28,11 +29,13 @@ public slots:
     void stopCue();
 
 private:
+    bool m_showUIBool = false;
     float m_Time = 1;
 
     QTimer *m_Timer;
 
     JumpTimerSettings *m_JTS;
+    JumpTimerWindow *m_JTW;
 
 private slots:
     void timerDone();
