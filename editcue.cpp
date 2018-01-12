@@ -27,6 +27,9 @@ void EditCue::setCue(BaseCue *cue)
     }else{
         ui->jumpSelectBox->setCurrentText("None");
     }
+    ui->jumpOnEndCheckBox->setChecked(m_Cue->getJumpOnEnd());
+    ui->endOnNextCheckBox->setChecked(m_Cue->getEndOnNext());
+
 }
 
 BaseCue* EditCue::getCue()
@@ -40,6 +43,9 @@ BaseCue* EditCue::getCue()
     }else{
         m_Cue->setJumpModeID("NONE");
     }
+    m_Cue->setJumpOnEnd(ui->jumpOnEndCheckBox->checkState() == Qt::Checked);
+    m_Cue->setEndOnNext(ui->endOnNextCheckBox->checkState() == Qt::Checked);
+
     return m_Cue;
 }
 

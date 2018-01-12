@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>481</width>
-    <height>210</height>
+    <height>219</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -83,6 +83,27 @@
       <widget class="QPushButton" name="editJumpButton">
        <property name="text">
         <string>Edit</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="jumpControlLayout">
+     <item>
+      <widget class="QCheckBox" name="jumpOnEndCheckBox">
+       <property name="text">
+        <string>Go To Next Cue When this ends</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QCheckBox" name="endOnNextCheckBox">
+       <property name="text">
+        <string>End This Cue when Next Cue is started</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
        </property>
       </widget>
      </item>
