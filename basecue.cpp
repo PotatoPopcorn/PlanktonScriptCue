@@ -119,6 +119,7 @@ void BaseCue::startCue()
     }
     process->start(procName, procArgs);
     m_JumpSetting->startCue();
+    connect(process, SIGNAL(finished(int)), this, SLOT(finishedCue()));
 }
 
 void BaseCue::endCue()
@@ -129,6 +130,7 @@ void BaseCue::endCue()
         process->terminate();
         process->kill();
     }
+    disconnect(process, SIGNAL(finished(int)), this, SLOT(finishedCue()));
 }
 
 void BaseCue::callNextCue()
