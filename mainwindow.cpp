@@ -19,12 +19,21 @@ MainWindow::~MainWindow()
 
 void MainWindow::nextCue()
 {
-    setActiveCue(m_activeCueNumber +1);
+    if(m_activeCueNumber +1 < m_cues.length()){
+        setActiveCue(m_activeCueNumber +1);
+    }
+    else
+    {
+        qDebug() << "At End Of Cuelist";
+    }
 }
 
 void MainWindow::prevCue()
 {
-    setActiveCue(m_activeCueNumber -1);
+    if(m_activeCueNumber != 0)
+    {
+        setActiveCue(m_activeCueNumber -1);
+    }
 }
 
 
