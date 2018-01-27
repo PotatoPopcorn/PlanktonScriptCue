@@ -124,7 +124,7 @@
          <bool>true</bool>
         </property>
         <property name="text">
-         <string>Edit</string>
+         <string>Edit Quick Cues</string>
         </property>
        </widget>
       </item>
@@ -134,7 +134,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Previous Page</string>
+         <string>Previous QC Page</string>
         </property>
        </widget>
       </item>
@@ -144,7 +144,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>Next Page</string>
+         <string>Next QC Page</string>
         </property>
        </widget>
       </item>
@@ -158,7 +158,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>QF 1</string>
+         <string>None</string>
         </property>
        </widget>
       </item>
@@ -168,7 +168,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>QF 2</string>
+         <string>None</string>
         </property>
        </widget>
       </item>
@@ -178,7 +178,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>QF 3</string>
+         <string>None</string>
         </property>
        </widget>
       </item>
@@ -188,7 +188,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>QF 4</string>
+         <string>None</string>
         </property>
        </widget>
       </item>
@@ -198,7 +198,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>QF 5</string>
+         <string>None</string>
         </property>
        </widget>
       </item>
@@ -208,7 +208,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>QF 6</string>
+         <string>None</string>
         </property>
        </widget>
       </item>
@@ -218,7 +218,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>QF 7</string>
+         <string>None</string>
         </property>
        </widget>
       </item>
@@ -228,7 +228,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>QF 8</string>
+         <string>None</string>
         </property>
        </widget>
       </item>
@@ -238,7 +238,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>QF 9</string>
+         <string>None</string>
         </property>
        </widget>
       </item>
@@ -248,7 +248,7 @@
          <bool>false</bool>
         </property>
         <property name="text">
-         <string>QF 0</string>
+         <string>None</string>
         </property>
        </widget>
       </item>
