@@ -10,6 +10,10 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     m_activeCue = new BaseCue();
     connect(m_activeCue, SIGNAL(nextCue()), this, SLOT(nextCue()));
+    m_qbPages.append(new QuickButtonPage());
+    for(int i = 0; i < m_qbPages.length(); ++i){
+        ui->quickButtonPageBox->addItem("Page " + QString::number(i+1));
+    }
 }
 
 MainWindow::~MainWindow()
@@ -253,6 +257,7 @@ void MainWindow::on_actionSave_triggered()
 void MainWindow::on_editQuickButton_clicked()
 {
     m_quickButtonEdit = new QuickButtonsEdit();
+    m_quickButtonEdit->setQBVector(m_qbPages);
     if(m_quickButtonEdit->exec()){
 
     }

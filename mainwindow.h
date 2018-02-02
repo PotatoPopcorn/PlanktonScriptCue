@@ -10,6 +10,7 @@
 #include "basecue.h"
 #include "editcue.h"
 #include "filehandler.h"
+#include "quickbuttonpage.h"
 #include "quickbuttonsedit.h"
 #include "settingsdialog.h"
 
@@ -68,6 +69,7 @@ private:
 
     Ui::MainWindow *ui;
     QVector<BaseCue*> m_cues;
+    QVector<QuickButtonPage*> m_qbPages;
 
     BaseCue *m_activeCue;
     EditCue *m_editCue;

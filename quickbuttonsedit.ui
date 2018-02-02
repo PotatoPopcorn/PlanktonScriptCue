@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>379</height>
+    <height>382</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -33,7 +33,7 @@
       <widget class="QComboBox" name="pageSelectionBox"/>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pageAddButton">
        <property name="maximumSize">
         <size>
          <width>85</width>
@@ -46,7 +46,7 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="pageRemoveButton">
        <property name="maximumSize">
         <size>
          <width>85</width>
@@ -63,7 +63,7 @@
    <item>
     <layout class="QHBoxLayout" name="quickCue1Layout_3">
      <item>
-      <widget class="QLabel" name="quickCue1Label_3">
+      <widget class="QLabel" name="quickCue1Label_2">
        <property name="text">
         <string>QC 1: None</string>
        </property>
@@ -82,19 +82,32 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="quickCue1Layout_4">
+    <layout class="QHBoxLayout" name="quickCue2Layout">
      <item>
-      <widget class="QLabel" name="quickCue1Label_4">
+      <widget class="QLabel" name="quickCue2Label">
        <property name="text">
         <string>QC 2: None</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="quickCue1Edit_4">
+      <widget class="QPushButton" name="quickCue2Edit">
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -106,19 +119,32 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="quickCue2Delete">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="quickCue1Layout_5">
+    <layout class="QHBoxLayout" name="quickCue3Layout">
      <item>
-      <widget class="QLabel" name="quickCue1Label_5">
+      <widget class="QLabel" name="quickCue3Label">
        <property name="text">
         <string>QC 3: None</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="quickCue1Edit_5">
+      <widget class="QPushButton" name="quickCue3Edit">
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -130,19 +156,32 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="quickCue3Delete">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="quickCue1Layout_6">
+    <layout class="QHBoxLayout" name="quickCue4Layout">
      <item>
-      <widget class="QLabel" name="quickCue1Label_6">
+      <widget class="QLabel" name="quickCue4Label">
        <property name="text">
         <string>QC 4: None</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="quickCue1Edit_6">
+      <widget class="QPushButton" name="quickCue4Edit">
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -154,19 +193,32 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="quickCue4Delete">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="quickCue1Layout_7">
+    <layout class="QHBoxLayout" name="quickCue5Layout">
      <item>
-      <widget class="QLabel" name="quickCue1Label_7">
+      <widget class="QLabel" name="quickCue5Label">
        <property name="text">
         <string>QC 5: None</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="quickCue1Edit_7">
+      <widget class="QPushButton" name="quickCue5Edit">
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -178,19 +230,32 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="quickCue5Delete">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="quickCue1Layout_8">
+    <layout class="QHBoxLayout" name="quickCue6Layout">
      <item>
-      <widget class="QLabel" name="quickCue1Label_8">
+      <widget class="QLabel" name="quickCue6Label">
        <property name="text">
         <string>QC 6: None</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="quickCue1Edit_8">
+      <widget class="QPushButton" name="quickCue6Edit">
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -202,19 +267,32 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="quickCue6Delete">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Delete</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="quickCue1Layout_9">
+    <layout class="QHBoxLayout" name="quickCue7Layout">
      <item>
-      <widget class="QLabel" name="quickCue1Label_9">
+      <widget class="QLabel" name="quickCue7Label">
        <property name="text">
         <string>QC 7: None</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="quickCue1Edit_9">
+      <widget class="QPushButton" name="quickCue7Edit">
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -223,22 +301,35 @@
        </property>
        <property name="text">
         <string>Edit</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="quickCue7Delete">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Delete</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="quickCue1Layout_10">
+    <layout class="QHBoxLayout" name="quickCue8Layout">
      <item>
-      <widget class="QLabel" name="quickCue1Label_10">
+      <widget class="QLabel" name="quickCue8Label">
        <property name="text">
         <string>QC 8: None</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="quickCue1Edit_10">
+      <widget class="QPushButton" name="quickCue8Edit">
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -247,6 +338,19 @@
        </property>
        <property name="text">
         <string>Edit</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="quickCue8Delete">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Delete</string>
        </property>
       </widget>
      </item>
@@ -255,14 +359,14 @@
    <item>
     <layout class="QHBoxLayout" name="quickCue1Layout_11">
      <item>
-      <widget class="QLabel" name="quickCue1Label_11">
+      <widget class="QLabel" name="quickCue9Label">
        <property name="text">
         <string>QC 9: None</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="quickCue1Edit_11">
+      <widget class="QPushButton" name="quickCue9Edit">
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -271,22 +375,35 @@
        </property>
        <property name="text">
         <string>Edit</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="quickCue9Delete">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Delete</string>
        </property>
       </widget>
      </item>
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="quickCue1Layout">
+    <layout class="QHBoxLayout" name="quickCue0Layout">
      <item>
-      <widget class="QLabel" name="quickCue1Label">
+      <widget class="QLabel" name="quickCue0Label">
        <property name="text">
         <string>QC 0: None</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="quickCue1Edit">
+      <widget class="QPushButton" name="quickCue0Edit">
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -295,6 +412,19 @@
        </property>
        <property name="text">
         <string>Edit</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="quickCue0Delete">
+       <property name="maximumSize">
+        <size>
+         <width>50</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="text">
+        <string>Delete</string>
        </property>
       </widget>
      </item>
