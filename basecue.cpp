@@ -164,3 +164,13 @@ void BaseCue::setJumpOnEnd(bool value)
 {
     m_JumpOnEnd = value;
 }
+
+bool BaseCue::isQuickButton()
+{
+    return m_isQuickButton;
+}
+
+void BaseCue::setIsQuickButton(bool value)
+{
+    m_isQuickButton = value;
+}

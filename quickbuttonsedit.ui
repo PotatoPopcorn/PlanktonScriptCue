@@ -47,6 +47,9 @@
      </item>
      <item>
       <widget class="QPushButton" name="pageRemoveButton">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
        <property name="maximumSize">
         <size>
          <width>85</width>
@@ -61,16 +64,16 @@
     </layout>
    </item>
    <item>
-    <layout class="QHBoxLayout" name="quickCue1Layout_3">
+    <layout class="QHBoxLayout" name="quickCue1Layout">
      <item>
-      <widget class="QLabel" name="quickCue1Label_2">
+      <widget class="QLabel" name="quickCue1Label">
        <property name="text">
         <string>QC 1: None</string>
        </property>
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="quickCue1Edit_3">
+      <widget class="QPushButton" name="quickCue1Edit">
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -83,7 +86,10 @@
       </widget>
      </item>
      <item>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="quickCue1Delete">
+       <property name="enabled">
+        <bool>true</bool>
+       </property>
        <property name="maximumSize">
         <size>
          <width>50</width>
@@ -436,7 +442,7 @@
       <enum>Qt::Horizontal</enum>
      </property>
      <property name="standardButtons">
-      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+      <set>QDialogButtonBox::Ok</set>
      </property>
     </widget>
    </item>

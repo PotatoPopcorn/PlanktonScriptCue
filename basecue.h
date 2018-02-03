@@ -19,6 +19,7 @@ public:
 
     bool getEndOnNext();
     bool getJumpOnEnd();
+    bool isQuickButton();
     QString getName();
     QString getProgram();
     QVector<QString> getArguments();
@@ -34,6 +35,7 @@ public:
     void setJumpSettingData(QJsonObject);
     void setEndOnNext(bool value);
     void setJumpOnEnd(bool value);
+    void setIsQuickButton(bool value);
 
 signals:
     void nextCue();
@@ -47,6 +49,7 @@ public slots:
 private:
     bool m_EndOnNext = true;
     bool m_JumpOnEnd = false;
+    bool m_isQuickButton = false;
 
     QString m_Name = "Untitled Cue";
     QString m_Program = "";
