@@ -259,7 +259,7 @@ void MainWindow::on_editQuickButton_clicked()
     m_quickButtonEdit = new QuickButtonsEdit();
     m_quickButtonEdit->setQBVector(m_qbPages);
     if(m_quickButtonEdit->exec()){
-
+        m_qbPages = m_quickButtonEdit->getQBVector();
     }
 }
 

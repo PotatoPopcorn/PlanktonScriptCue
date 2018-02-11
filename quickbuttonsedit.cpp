@@ -17,8 +17,9 @@ void QuickButtonsEdit::setQBVector(QVector<QuickButtonPage *> qbVector)
 {
     m_qbPages = qbVector;
     for(int i = 0; i < m_qbPages.length(); ++i){
-        ui->pageSelectionBox->addItem("Page " + QString::number(i+1));
+        //ui->pageSelectionBox->addItem("Page " + QString::number(i+1));
     }
+    updatePage();
 }
 
 QVector<QuickButtonPage*> QuickButtonsEdit::getQBVector()
@@ -38,6 +39,20 @@ QString QuickButtonsEdit::getTitle(int num)
         retString.append("None");
     }
     return retString;
+}
+
+void QuickButtonsEdit::checkPageLength()
+{
+    while(m_qbPages.length() != ui->pageSelectionBox->count())
+    {
+        if(m_qbPages.length() < ui->pageSelectionBox->count()){
+            ui->pageSelectionBox->removeItem(ui->pageSelectionBox->count()-1);
+        }
+        else
+        {
+            ui->pageSelectionBox->addItem("Page " + QString::number(ui->pageSelectionBox->count()+1));
+        }
+    }
 }
 
 void QuickButtonsEdit::updatePage()
@@ -63,6 +78,8 @@ void QuickButtonsEdit::updatePage()
     ui->quickCue7Delete->setEnabled(page->getCueExists(7));
     ui->quickCue8Delete->setEnabled(page->getCueExists(8));
     ui->quickCue9Delete->setEnabled(page->getCueExists(9));
+    ui->pageRemoveButton->setEnabled((m_qbPages.length() > 1));
+    checkPageLength();
 }
 
 void QuickButtonsEdit::editCue(int num)
@@ -198,4 +215,27 @@ void QuickButtonsEdit::on_quickCue9Edit_clicked()
 void QuickButtonsEdit::on_quickCue0Edit_clicked()
 {
     editCue(0);
+}
+
+void QuickButtonsEdit::on_pageAddButton_clicked()
+{
+    QuickButtonPage *newPage = new QuickButtonPage();
+    m_qbPages.append(newPage);
+    updatePage();
+}
+
+void QuickButtonsEdit::on_pageRemoveButton_clicked()
+{
+    int index = ui->pageSelectionBox->currentIndex();
+    if(index != 0)
+    {
+        ui->pageSelectionBox->setCurrentIndex(index -1);
+    }
+    else
+    {
+        ui->pageSelectionBox->setCurrentIndex(index +1);
+    }
+
+    m_qbPages.remove(index);
+    updatePage();
 }

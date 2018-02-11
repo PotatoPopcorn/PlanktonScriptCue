@@ -67,6 +67,10 @@ private slots:
 
     void on_quickCue0Edit_clicked();
 
+    void on_pageAddButton_clicked();
+
+    void on_pageRemoveButton_clicked();
+
 private:
     Ui::QuickButtonsEdit *ui;
 
@@ -75,6 +79,7 @@ private:
     int m_currentPage = 0;
 
     void updatePage();
+    void checkPageLength();
     void editCue(int num);
     QString getTitle(int num);
 
