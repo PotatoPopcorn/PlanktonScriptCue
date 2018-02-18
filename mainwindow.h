@@ -70,6 +70,26 @@ private slots:
 
     void on_nextPageQuickButton_clicked();
 
+    void on_quickButton0_clicked();
+
+    void on_quickButton1_clicked();
+
+    void on_quickButton2_clicked();
+
+    void on_quickButton3_clicked();
+
+    void on_quickButton4_clicked();
+
+    void on_quickButton5_clicked();
+
+    void on_quickButton6_clicked();
+
+    void on_quickButton7_clicked();
+
+    void on_quickButton8_clicked();
+
+    void on_quickButton9_clicked();
+
 private:
     int m_activeCueNumber = -1;
     int m_qbActivePage = 0;

@@ -402,3 +402,53 @@ void MainWindow::on_nextPageQuickButton_clicked()
 {
     ui->quickButtonPageBox->setCurrentIndex(m_qbActivePage+1);
 }
+
+void MainWindow::on_quickButton0_clicked()
+{
+    m_qbPages.at(m_qbActivePage)->getCue(0)->startCue();
+}
+
+void MainWindow::on_quickButton1_clicked()
+{
+    m_qbPages.at(m_qbActivePage)->getCue(1)->startCue();
+}
+
+void MainWindow::on_quickButton2_clicked()
+{
+    m_qbPages.at(m_qbActivePage)->getCue(2)->startCue();
+}
+
+void MainWindow::on_quickButton3_clicked()
+{
+    m_qbPages.at(m_qbActivePage)->getCue(3)->startCue();
+}
+
+void MainWindow::on_quickButton4_clicked()
+{
+    m_qbPages.at(m_qbActivePage)->getCue(4)->startCue();
+}
+
+void MainWindow::on_quickButton5_clicked()
+{
+    m_qbPages.at(m_qbActivePage)->getCue(5)->startCue();
+}
+
+void MainWindow::on_quickButton6_clicked()
+{
+    m_qbPages.at(m_qbActivePage)->getCue(6)->startCue();
+}
+
+void MainWindow::on_quickButton7_clicked()
+{
+    m_qbPages.at(m_qbActivePage)->getCue(7)->startCue();
+}
+
+void MainWindow::on_quickButton8_clicked()
+{
+    m_qbPages.at(m_qbActivePage)->getCue(8)->startCue();
+}
+
+void MainWindow::on_quickButton9_clicked()
+{
+    m_qbPages.at(m_qbActivePage)->getCue(9)->startCue();
+}
