@@ -22,7 +22,8 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::updateQuickCues(){
-
+    ui->prevPageQuickButton->setEnabled(m_qcActivePage > 0);
+    ui->nextPageQuickButton->setEnabled(m_qcActivePage < ui->quickButtonPageBox->count()-1);
 }
 
 void MainWindow::nextCue()
@@ -274,6 +275,7 @@ void MainWindow::on_editQuickButton_clicked()
                 ui->quickButtonPageBox->addItem("Page " + QString::number(ui->quickButtonPageBox->count()+1));
             }
         }
+        updateQuickCues();
     }
 }
 
@@ -289,4 +291,20 @@ void MainWindow::on_actionSave_As_triggered()
                                                 "",
                                                 tr("ScriptCue (*.planksc)"));
     m_file.saveAs(m_cues, path);
+}
+
+void MainWindow::on_quickButtonPageBox_currentIndexChanged(int index)
+{
+    m_qcActivePage = index;
+    updateQuickCues();
+}
+
+void MainWindow::on_prevPageQuickButton_clicked()
+{
+    ui->quickButtonPageBox->setCurrentIndex(m_qcActivePage-1);
+}
+
+void MainWindow::on_nextPageQuickButton_clicked()
+{
+    ui->quickButtonPageBox->setCurrentIndex(m_qcActivePage+1);
 }

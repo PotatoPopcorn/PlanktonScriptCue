@@ -64,6 +64,12 @@ private slots:
 
     void on_actionSave_As_triggered();
 
+    void on_quickButtonPageBox_currentIndexChanged(int index);
+
+    void on_prevPageQuickButton_clicked();
+
+    void on_nextPageQuickButton_clicked();
+
 private:
     int m_activeCueNumber = -1;
     int m_qcActivePage = 0;
