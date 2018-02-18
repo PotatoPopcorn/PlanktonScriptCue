@@ -21,6 +21,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::updateQuickCues(){
+
+}
+
 void MainWindow::nextCue()
 {
     if(m_activeCueNumber +1 < m_cues.length()){
@@ -260,6 +264,16 @@ void MainWindow::on_editQuickButton_clicked()
     m_quickButtonEdit->setQBVector(m_qbPages);
     if(m_quickButtonEdit->exec()){
         m_qbPages = m_quickButtonEdit->getQBVector();
+        while(m_qbPages.length() != ui->quickButtonPageBox->count()){
+            if(m_qbPages.length() < ui->quickButtonPageBox->count())
+            {
+                ui->quickButtonPageBox->removeItem(ui->quickButtonPageBox->count()-1);
+            }
+            else if(m_qbPages.length() > ui->quickButtonPageBox->count())
+            {
+                ui->quickButtonPageBox->addItem("Page " + QString::number(ui->quickButtonPageBox->count()+1));
+            }
+        }
     }
 }
 

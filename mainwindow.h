@@ -66,6 +66,7 @@ private slots:
 
 private:
     int m_activeCueNumber = -1;
+    int m_qcActivePage = 0;
 
     Ui::MainWindow *ui;
     QVector<BaseCue*> m_cues;
@@ -80,6 +81,7 @@ private:
 
     void updateCuelist();
     void setActiveCue(int i);
+    void updateQuickCues();
 
 };
 

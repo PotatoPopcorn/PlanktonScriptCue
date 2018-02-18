@@ -16,9 +16,6 @@ QuickButtonsEdit::~QuickButtonsEdit()
 void QuickButtonsEdit::setQBVector(QVector<QuickButtonPage *> qbVector)
 {
     m_qbPages = qbVector;
-    for(int i = 0; i < m_qbPages.length(); ++i){
-        //ui->pageSelectionBox->addItem("Page " + QString::number(i+1));
-    }
     updatePage();
 }
 
