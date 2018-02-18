@@ -22,8 +22,102 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::updateQuickCues(){
-    ui->prevPageQuickButton->setEnabled(m_qcActivePage > 0);
-    ui->nextPageQuickButton->setEnabled(m_qcActivePage < ui->quickButtonPageBox->count()-1);
+    ui->prevPageQuickButton->setEnabled(m_qbActivePage > 0);
+    ui->nextPageQuickButton->setEnabled(m_qbActivePage < ui->quickButtonPageBox->count()-1);
+
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(0)){
+        ui->quickButton0->setEnabled(true);
+        ui->quickButton0->setText(m_qbPages.at(m_qbActivePage)->getCue(0)->getName());
+    }
+    else
+    {
+        ui->quickButton0->setEnabled(false);
+        ui->quickButton0->setText("None");
+    }
+
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(1)){
+        ui->quickButton1->setEnabled(true);
+        ui->quickButton1->setText(m_qbPages.at(m_qbActivePage)->getCue(1)->getName());
+    }
+    else
+    {
+        ui->quickButton1->setEnabled(false);
+        ui->quickButton1->setText("None");
+    }
+
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(2)){
+        ui->quickButton2->setEnabled(true);
+        ui->quickButton2->setText(m_qbPages.at(m_qbActivePage)->getCue(2)->getName());
+    }
+    else
+    {
+        ui->quickButton2->setEnabled(false);
+        ui->quickButton2->setText("None");
+    }
+
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(3)){
+        ui->quickButton3->setEnabled(true);
+        ui->quickButton3->setText(m_qbPages.at(m_qbActivePage)->getCue(3)->getName());
+    }
+    else
+    {
+        ui->quickButton3->setEnabled(false);
+        ui->quickButton3->setText("None");
+    }
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(4)){
+        ui->quickButton4->setEnabled(true);
+        ui->quickButton4->setText(m_qbPages.at(m_qbActivePage)->getCue(4)->getName());
+    }
+    else
+    {
+        ui->quickButton4->setEnabled(false);
+        ui->quickButton4->setText("None");
+    }
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(5)){
+        ui->quickButton5->setEnabled(true);
+        ui->quickButton5->setText(m_qbPages.at(m_qbActivePage)->getCue(5)->getName());
+    }
+    else
+    {
+        ui->quickButton5->setEnabled(false);
+        ui->quickButton5->setText("None");
+    }
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(6)){
+        ui->quickButton6->setEnabled(true);
+        ui->quickButton6->setText(m_qbPages.at(m_qbActivePage)->getCue(6)->getName());
+    }
+    else
+    {
+        ui->quickButton6->setEnabled(false);
+        ui->quickButton6->setText("None");
+    }
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(7)){
+        ui->quickButton7->setEnabled(true);
+        ui->quickButton7->setText(m_qbPages.at(m_qbActivePage)->getCue(7)->getName());
+    }
+    else
+    {
+        ui->quickButton7->setEnabled(false);
+        ui->quickButton7->setText("None");
+    }
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(8)){
+        ui->quickButton8->setEnabled(true);
+        ui->quickButton8->setText(m_qbPages.at(m_qbActivePage)->getCue(8)->getName());
+    }
+    else
+    {
+        ui->quickButton8->setEnabled(false);
+        ui->quickButton8->setText("None");
+    }
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(9)){
+        ui->quickButton9->setEnabled(true);
+        ui->quickButton9->setText(m_qbPages.at(m_qbActivePage)->getCue(9)->getName());
+    }
+    else
+    {
+        ui->quickButton9->setEnabled(false);
+        ui->quickButton9->setText("None");
+    }
 }
 
 void MainWindow::nextCue()
@@ -295,16 +389,16 @@ void MainWindow::on_actionSave_As_triggered()
 
 void MainWindow::on_quickButtonPageBox_currentIndexChanged(int index)
 {
-    m_qcActivePage = index;
+    m_qbActivePage = index;
     updateQuickCues();
 }
 
 void MainWindow::on_prevPageQuickButton_clicked()
 {
-    ui->quickButtonPageBox->setCurrentIndex(m_qcActivePage-1);
+    ui->quickButtonPageBox->setCurrentIndex(m_qbActivePage-1);
 }
 
 void MainWindow::on_nextPageQuickButton_clicked()
 {
-    ui->quickButtonPageBox->setCurrentIndex(m_qcActivePage+1);
+    ui->quickButtonPageBox->setCurrentIndex(m_qbActivePage+1);
 }

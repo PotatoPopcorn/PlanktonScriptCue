@@ -72,7 +72,7 @@ private slots:
 
 private:
     int m_activeCueNumber = -1;
-    int m_qcActivePage = 0;
+    int m_qbActivePage = 0;
 
     Ui::MainWindow *ui;
     QVector<BaseCue*> m_cues;
