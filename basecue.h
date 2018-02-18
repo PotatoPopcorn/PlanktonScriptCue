@@ -2,6 +2,8 @@
 #define BASECUE_H
 
 #include <QDebug>
+#include <QJsonArray>
+#include <QJsonObject>
 #include <QObject>
 #include <QProcess>
 #include <QString>
@@ -36,6 +38,9 @@ public:
     void setEndOnNext(bool value);
     void setJumpOnEnd(bool value);
     void setIsQuickButton(bool value);
+
+    QJsonObject save();
+    void load(QJsonObject data);
 
 signals:
     void nextCue();

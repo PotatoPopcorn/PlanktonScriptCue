@@ -22,6 +22,16 @@ MainWindow::~MainWindow()
 }
 
 void MainWindow::updateQuickCues(){
+    while(m_qbPages.length() != ui->quickButtonPageBox->count()){
+        if(m_qbPages.length() < ui->quickButtonPageBox->count())
+        {
+            ui->quickButtonPageBox->removeItem(ui->quickButtonPageBox->count()-1);
+        }
+        else if(m_qbPages.length() > ui->quickButtonPageBox->count())
+        {
+            ui->quickButtonPageBox->addItem("Page " + QString::number(ui->quickButtonPageBox->count()+1));
+        }
+    }
     ui->prevPageQuickButton->setEnabled(m_qbActivePage > 0);
     ui->nextPageQuickButton->setEnabled(m_qbActivePage < ui->quickButtonPageBox->count()-1);
 
@@ -257,7 +267,11 @@ void MainWindow::on_actionNew_triggered()
     //TODO: Ask if user wants to save / sure want to create new file
     m_cues.clear();
     m_file.setFileOpen(false);
+    m_qbPages.clear();
+    m_qbPages.append(new QuickButtonPage());
     updateCuelist();
+    updateQuickCues();
+
 }
 
 void MainWindow::on_actionSettings_triggered()
@@ -350,7 +364,7 @@ void MainWindow::on_prevButton_clicked()
 
 void MainWindow::on_actionSave_triggered()
 {
-    m_file.save(m_cues, this);
+    m_file.save(m_cues, m_qbPages, this);
 }
 
 void MainWindow::on_editQuickButton_clicked()
@@ -359,24 +373,15 @@ void MainWindow::on_editQuickButton_clicked()
     m_quickButtonEdit->setQBVector(m_qbPages);
     if(m_quickButtonEdit->exec()){
         m_qbPages = m_quickButtonEdit->getQBVector();
-        while(m_qbPages.length() != ui->quickButtonPageBox->count()){
-            if(m_qbPages.length() < ui->quickButtonPageBox->count())
-            {
-                ui->quickButtonPageBox->removeItem(ui->quickButtonPageBox->count()-1);
-            }
-            else if(m_qbPages.length() > ui->quickButtonPageBox->count())
-            {
-                ui->quickButtonPageBox->addItem("Page " + QString::number(ui->quickButtonPageBox->count()+1));
-            }
-        }
         updateQuickCues();
     }
 }
 
 void MainWindow::on_actionOpen_triggered()
 {
-    m_file.open(m_cues, QFileDialog::getOpenFileName(this, tr("Open"), "", tr("ScriptCue (*.planksc)")));
+    m_file.open(m_cues, m_qbPages, QFileDialog::getOpenFileName(this, tr("Open"), "", tr("ScriptCue (*.planksc)")));
     updateCuelist();
+    updateQuickCues();
 }
 
 void MainWindow::on_actionSave_As_triggered()
@@ -384,7 +389,7 @@ void MainWindow::on_actionSave_As_triggered()
     QString path = QFileDialog::getSaveFileName(this, tr("Save File"),
                                                 "",
                                                 tr("ScriptCue (*.planksc)"));
-    m_file.saveAs(m_cues, path);
+    m_file.saveAs(m_cues, m_qbPages, path);
 }
 
 void MainWindow::on_quickButtonPageBox_currentIndexChanged(int index)

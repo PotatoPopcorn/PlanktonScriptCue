@@ -1,6 +1,9 @@
 #ifndef QUICKBUTTONPAGE_H
 #define QUICKBUTTONPAGE_H
 
+#include <QJsonObject>
+#include <QJsonArray>
+
 #include "basecue.h"
 
 class QuickButtonPage
@@ -11,6 +14,11 @@ public:
     BaseCue* getCue(int cue);
     void setCue(BaseCue* cuePtr, int cueNum);
     void removeCue(int cue);
+    void clearPage();
+
+    QJsonObject save();
+    void load(QJsonObject data);
+
 
 private:
     bool cueExists[10] = {false,false,false,false,false,false,false,false,false,false};

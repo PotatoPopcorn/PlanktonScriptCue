@@ -174,3 +174,43 @@ void BaseCue::setIsQuickButton(bool value)
 {
     m_isQuickButton = value;
 }
+
+QJsonObject BaseCue::save()
+{
+    QJsonObject cueObject;
+    cueObject["name"] = getName();
+    cueObject["program"] = getProgram();
+    //TODO: Update Arguments
+    QJsonArray argArray;
+    for(int j = 0; j < getArguments().length(); j++)
+    {
+        QJsonObject argObject;
+        argObject["argument"] = getArguments().at(j);
+        argArray.append(argObject);
+    }
+    cueObject["arguemnts"] = argArray;
+    cueObject["jump"] = getJumpSettingPtr()->getIDName();
+    cueObject["jumpProp"] = getJumpSettingPtr()->getSaveData();
+    cueObject["endOnNext"] = getEndOnNext();
+    cueObject["jumpOnEnd"] = getJumpOnEnd();
+    return cueObject;
+}
+
+void BaseCue::load(QJsonObject data)
+{
+    QVector<QString> cueArgs;
+    QJsonArray argArray = data["arguemnts"].toArray();
+    for(int j = 0; j < argArray.size(); j++)
+    {
+        QJsonObject argObject = argArray[j].toObject();
+        cueArgs.append(argObject["argument"].toString());
+    }
+    setCue(
+            data["name"].toString(),
+            data["program"].toString(),
+            cueArgs,
+            data["jump"].toString(),
+            data["endOnNext"].toBool(true),
+            data["jumpOnEnd"].toBool());
+    setJumpSettingData(data["jumpProp"].toObject());
+}
