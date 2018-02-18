@@ -29,6 +29,16 @@ void EditCue::setCue(BaseCue *cue)
     }
     ui->jumpOnEndCheckBox->setChecked(m_Cue->getJumpOnEnd());
     ui->endOnNextCheckBox->setChecked(m_Cue->getEndOnNext());
+    if(m_Cue->isQuickButton()){
+        ui->jumpSelectBox->setEnabled(false);
+        ui->editJumpButton->setEnabled(false);
+        ui->jumpOnEndCheckBox->setEnabled(false);
+        ui->endOnNextCheckBox->setEnabled(false);
+
+        ui->jumpOnEndCheckBox->setChecked(false);
+        ui->endOnNextCheckBox->setChecked(false);
+
+    }
 
 }
 
