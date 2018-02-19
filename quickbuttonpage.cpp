@@ -63,10 +63,8 @@ void QuickButtonPage::load(QJsonObject data)
         QJsonObject currentCue = cueArray.at(i).toObject();
         if(!currentCue["exists"].toBool())
         {
-            qDebug() << "Cue " << i << "doesn't exist";
             continue;
         }
-        qDebug() << "Cue " << i << "exists";
         BaseCue *nextCue = new BaseCue();
         nextCue->load(currentCue);
         setCue(nextCue, i);
