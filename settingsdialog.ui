@@ -6,29 +6,222 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>658</width>
+    <height>532</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Settings</string>
   </property>
-  <widget class="QDialogButtonBox" name="buttonBox">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>240</y>
-     <width>341</width>
-     <height>32</height>
-    </rect>
-   </property>
-   <property name="orientation">
-    <enum>Qt::Horizontal</enum>
-   </property>
-   <property name="standardButtons">
-    <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
-   </property>
-  </widget>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="tab">
+      <attribute name="title">
+       <string>Keyboard Shortcuts</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QScrollArea" name="scrollArea">
+         <property name="widgetResizable">
+          <bool>true</bool>
+         </property>
+         <widget class="QWidget" name="scrollAreaWidgetContents">
+          <property name="geometry">
+           <rect>
+            <x>0</x>
+            <y>0</y>
+            <width>614</width>
+            <height>439</height>
+           </rect>
+          </property>
+          <layout class="QVBoxLayout" name="verticalLayout_3">
+           <item>
+            <layout class="QFormLayout" name="formLayout">
+             <item row="0" column="0">
+              <widget class="QLabel" name="label">
+               <property name="text">
+                <string>Next:</string>
+               </property>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit"/>
+             </item>
+             <item row="1" column="0">
+              <widget class="QLabel" name="label_2">
+               <property name="text">
+                <string>Previous</string>
+               </property>
+              </widget>
+             </item>
+             <item row="1" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_2"/>
+             </item>
+             <item row="2" column="0">
+              <widget class="QLabel" name="label_3">
+               <property name="text">
+                <string>Start</string>
+               </property>
+              </widget>
+             </item>
+             <item row="2" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_3"/>
+             </item>
+             <item row="3" column="0">
+              <widget class="QLabel" name="label_4">
+               <property name="text">
+                <string>Stop</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="0">
+              <widget class="QLabel" name="label_5">
+               <property name="text">
+                <string>Next QC Page</string>
+               </property>
+              </widget>
+             </item>
+             <item row="4" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_4"/>
+             </item>
+             <item row="5" column="0">
+              <widget class="QLabel" name="label_6">
+               <property name="text">
+                <string>Prev QC Page</string>
+               </property>
+              </widget>
+             </item>
+             <item row="6" column="0">
+              <widget class="QLabel" name="label_7">
+               <property name="text">
+                <string>Run QC 1</string>
+               </property>
+              </widget>
+             </item>
+             <item row="7" column="0">
+              <widget class="QLabel" name="label_8">
+               <property name="text">
+                <string>Run QC 2</string>
+               </property>
+              </widget>
+             </item>
+             <item row="8" column="0">
+              <widget class="QLabel" name="label_9">
+               <property name="text">
+                <string>Run QC 3</string>
+               </property>
+              </widget>
+             </item>
+             <item row="9" column="0">
+              <widget class="QLabel" name="label_10">
+               <property name="text">
+                <string>Run QC 4</string>
+               </property>
+              </widget>
+             </item>
+             <item row="10" column="0">
+              <widget class="QLabel" name="label_11">
+               <property name="text">
+                <string>Run QC 5</string>
+               </property>
+              </widget>
+             </item>
+             <item row="11" column="0">
+              <widget class="QLabel" name="label_12">
+               <property name="text">
+                <string>Run QC 6</string>
+               </property>
+              </widget>
+             </item>
+             <item row="12" column="0">
+              <widget class="QLabel" name="label_13">
+               <property name="text">
+                <string>Run QC 7</string>
+               </property>
+              </widget>
+             </item>
+             <item row="13" column="0">
+              <widget class="QLabel" name="label_14">
+               <property name="text">
+                <string>Run QC 8</string>
+               </property>
+              </widget>
+             </item>
+             <item row="14" column="0">
+              <widget class="QLabel" name="label_15">
+               <property name="text">
+                <string>Run QC 9</string>
+               </property>
+              </widget>
+             </item>
+             <item row="15" column="0">
+              <widget class="QLabel" name="label_16">
+               <property name="text">
+                <string>Run QC 0</string>
+               </property>
+              </widget>
+             </item>
+             <item row="3" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_5"/>
+             </item>
+             <item row="5" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_6"/>
+             </item>
+             <item row="6" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_7"/>
+             </item>
+             <item row="7" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_8"/>
+             </item>
+             <item row="8" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_9"/>
+             </item>
+             <item row="9" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_10"/>
+             </item>
+             <item row="12" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_11"/>
+             </item>
+             <item row="10" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_12"/>
+             </item>
+             <item row="11" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_13"/>
+             </item>
+             <item row="13" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_14"/>
+             </item>
+             <item row="14" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_15"/>
+             </item>
+             <item row="15" column="1">
+              <widget class="QKeySequenceEdit" name="keySequenceEdit_16"/>
+             </item>
+            </layout>
+           </item>
+          </layout>
+         </widget>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
  </widget>
  <resources/>
  <connections>
