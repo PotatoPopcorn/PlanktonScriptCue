@@ -54,3 +54,179 @@ KeyboardHandler::KeyboardHandler()
     connect(m_run9Shortcut, QShortcut::activated(), this, run9Pressed());
 
 }
+
+QKeySequence* KeyboardHandler::getNextKey()
+{
+    return m_nextKey;
+}
+
+void KeyboardHandler::setNextKey(QKeySequence *key)
+{
+    m_nextKey = key;
+    m_nextShortcut->setKey(m_nextKey);
+}
+
+QKeySequence* KeyboardHandler::getPrevKey()
+{
+    return m_prevKey;
+}
+
+void KeyboardHandler::setprevKey(QKeySequence *key)
+{
+    m_prevKey = key;
+    m_prevShortcut->setKey(m_prevKey);
+}
+
+QKeySequence* KeyboardHandler::getStartKey()
+{
+    return m_startKey;
+}
+
+void KeyboardHandler::setStartKey(QKeySequence *key)
+{
+    m_startKey = key;
+    m_startShortcut->setKey(m_nextKey);
+}
+
+QKeySequence* KeyboardHandler::getStopKey()
+{
+    return m_stopKey;
+}
+
+void KeyboardHandler::setStopKey(QKeySequence *key)
+{
+    m_stopKey = key;
+    m_stopShortcut->setKey(m_stopKey);
+}
+
+QKeySequence* KeyboardHandler::getNextQBPageKey()
+{
+    return m_nextQBPageKey;
+}
+
+void KeyboardHandler::setNextQBPageKey(QKeySequence *key)
+{
+    m_nextQBPageKey = key;
+    m_nextQBPageShortcut->setKey(m_nextQBPageKey);
+}
+
+QKeySequence* KeyboardHandler::getPrevQBPageKey()
+{
+    return m_prevQBPageKey;
+}
+
+void KeyboardHandler::setPrevQBPageKey(QKeySequence *key)
+{
+    m_prevQBPageKey = key;
+    m_prevQBPageShortcut->setKey(m_prevQBPageKey);
+}
+
+QKeySequence* KeyboardHandler::getRun0Key()
+{
+    return m_run0Key;
+}
+
+void KeyboardHandler::setRun0Key(QKeySequence *key)
+{
+    m_run0Key = key;
+    m_run0Shortcut->setKey(m_run0Key);
+}
+
+QKeySequence* KeyboardHandler::getRun1Key()
+{
+    return m_run1Key;
+}
+
+void KeyboardHandler::setRun1Key(QKeySequence *key)
+{
+    m_run1Key = key;
+    m_run1Shortcut->setKey(m_run1Key);
+}
+
+QKeySequence* KeyboardHandler::getRun2Key()
+{
+    return m_run2Key;
+}
+
+void KeyboardHandler::setRun2Key(QKeySequence *key)
+{
+    m_run2Key = key;
+    m_run2Shortcut->setKey(m_run2Key);
+}
+
+QKeySequence* KeyboardHandler::getRun3Key()
+{
+    return m_run3Key;
+}
+
+void KeyboardHandler::setRun3Key(QKeySequence *key)
+{
+    m_run3Key = key;
+    m_run3Shortcut->setKey(m_run3Key);
+}
+
+QKeySequence* KeyboardHandler::getRun4Key()
+{
+    return m_run4Key;
+}
+
+void KeyboardHandler::setRun4Key(QKeySequence *key)
+{
+    m_run4Key = key;
+    m_run4Shortcut->setKey(m_run4Key);
+}
+
+QKeySequence* KeyboardHandler::getRun5Key()
+{
+    return m_run5Key;
+}
+
+void KeyboardHandler::setRun5Key(QKeySequence *key)
+{
+    m_run5Key = key;
+    m_run5Shortcut->setKey(m_run5Key);
+}
+
+QKeySequence* KeyboardHandler::getRun6Key()
+{
+    return m_run6Key;
+}
+
+void KeyboardHandler::setRun6Key(QKeySequence *key)
+{
+    m_run6Key = key;
+    m_run6Shortcut->setKey(m_run6Key);
+}
+
+QKeySequence* KeyboardHandler::getRun7Key()
+{
+    return m_run7Key;
+}
+
+void KeyboardHandler::setRun7Key(QKeySequence *key)
+{
+    m_run7Key = key;
+    m_run7Shortcut->setKey(m_run7Key);
+}
+
+QKeySequence* KeyboardHandler::getRun8Key()
+{
+    return m_run8Key;
+}
+
+void KeyboardHandler::setRun8Key(QKeySequence *key)
+{
+    m_run8Key = key;
+    m_run8Shortcut->setKey(m_run0Key);
+}
+
+QKeySequence* KeyboardHandler::getRun9Key()
+{
+    return m_run9Key;
+}
+
+void KeyboardHandler::setRun9Key(QKeySequence *key)
+{
+    m_run9Key = key;
+    m_run9Shortcut->setKey(m_run9Key);
+}

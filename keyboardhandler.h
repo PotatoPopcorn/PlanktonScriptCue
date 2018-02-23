@@ -11,6 +11,40 @@ class KeyboardHandler : QObject
 public:
     KeyboardHandler();
 
+    void setNextKey(QKeySequence* key);
+    void setPrevKey(QKeySequence* key);
+    void setStartKey(QKeySequence* key);
+    void setStopKey(QKeySequence);
+    void setNextQBPageKey(QKeySequence* key);
+    void setPrevQBPageKey(QKeySequence* key);
+    void setRun0Key(QKeySequence* key);
+    void setRun1Key(QKeySequence* key);
+    void setRun2Key(QKeySequence* key);
+    void setRun3Key(QKeySequence* key);
+    void setRun4Key(QKeySequence* key);
+    void setRun5Key(QKeySequence* key);
+    void setRun6Key(QKeySequence* key);
+    void setRun7Key(QKeySequence* key);
+    void setRun8Key(QKeySequence* key);
+    void setRun9Key(QKeySequence* key);
+
+    QKeySequence* getNextKey();
+    QKeySequence* getPrevKey();
+    QKeySequence* getStartKey();
+    QKeySequence* getStopKey();
+    QKeySequence* getNextQBPageKey();
+    QKeySequence* getPrevQBPageKey();
+    QKeySequence* getRun0Key();
+    QKeySequence* getRun1Key();
+    QKeySequence* getRun2Key();
+    QKeySequence* getRun3Key();
+    QKeySequence* getRun4Key();
+    QKeySequence* getRun5Key();
+    QKeySequence* getRun6Key();
+    QKeySequence* getRun7Key();
+    QKeySequence* getRun8Key();
+    QKeySequence* getRun9Key();
+
 signals:
     nextPressed();
     prevPressed();
