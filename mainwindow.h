@@ -10,6 +10,7 @@
 #include "basecue.h"
 #include "editcue.h"
 #include "filehandler.h"
+#include "keyboardhandler.h"
 #include "quickbuttonpage.h"
 #include "quickbuttonsedit.h"
 #include "settingsdialog.h"
@@ -101,6 +102,7 @@ private:
     BaseCue *m_activeCue;
     EditCue *m_editCue;
     FileHandler m_file;
+    KeyboardHandler *m_keyboardHandler;
     QuickButtonsEdit *m_quickButtonEdit;
     SettingsDialog *m_settings;
 

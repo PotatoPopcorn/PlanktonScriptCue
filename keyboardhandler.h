@@ -1,20 +1,21 @@
 #ifndef KEYBOARDHANDLER_H
 #define KEYBOARDHANDLER_H
 
+#include <QObject>
 #include <QShortcut>
 #include <QKeySequence>
 
-class KeyboardHandler : QObject
+class KeyboardHandler : public QObject
 {
     Q_OBJECT
 
 public:
-    KeyboardHandler();
+    KeyboardHandler(QWidget *parent);
 
     void setNextKey(QKeySequence* key);
     void setPrevKey(QKeySequence* key);
     void setStartKey(QKeySequence* key);
-    void setStopKey(QKeySequence);
+    void setStopKey(QKeySequence *key);
     void setNextQBPageKey(QKeySequence* key);
     void setPrevQBPageKey(QKeySequence* key);
     void setRun0Key(QKeySequence* key);
@@ -46,22 +47,40 @@ public:
     QKeySequence* getRun9Key();
 
 signals:
-    nextPressed();
-    prevPressed();
-    startPressed();
-    stopPressed();
-    nextQBPagePressed();
-    prevQBPagePressed();
-    run0Pressed();
-    run1Pressed();
-    run2Pressed();
-    run3Pressed();
-    run4Pressed();
-    run5Pressed();
-    run6Pressed();
-    run7Pressed();
-    run8Pressed();
-    run9Pressed();
+    void nextPressed();
+    void prevPressed();
+    void startPressed();
+    void stopPressed();
+    void nextQBPagePressed();
+    void prevQBPagePressed();
+    void run0Pressed();
+    void run1Pressed();
+    void run2Pressed();
+    void run3Pressed();
+    void run4Pressed();
+    void run5Pressed();
+    void run6Pressed();
+    void run7Pressed();
+    void run8Pressed();
+    void run9Pressed();
+
+private slots:
+    void emitNextPressed();
+    void emitPrevPressed();
+    void emitStartPressed();
+    void emitStopPressed();
+    void emitNextQBPagePressed();
+    void emitPrevQBPagePressed();
+    void emitRun0Pressed();
+    void emitRun1Pressed();
+    void emitRun2Pressed();
+    void emitRun3Pressed();
+    void emitRun4Pressed();
+    void emitRun5Pressed();
+    void emitRun6Pressed();
+    void emitRun7Pressed();
+    void emitRun8Pressed();
+    void emitRun9Pressed();
 
 private:
     QKeySequence *m_nextKey;

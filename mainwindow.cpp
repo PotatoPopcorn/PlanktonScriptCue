@@ -14,6 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     for(int i = 0; i < m_qbPages.length(); ++i){
         ui->quickButtonPageBox->addItem("Page " + QString::number(i+1));
     }
+    m_keyboardHandler = new KeyboardHandler(this);
 }
 
 MainWindow::~MainWindow()
