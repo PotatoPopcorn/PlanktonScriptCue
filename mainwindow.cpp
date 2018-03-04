@@ -15,6 +15,21 @@ MainWindow::MainWindow(QWidget *parent) :
         ui->quickButtonPageBox->addItem("Page " + QString::number(i+1));
     }
     m_keyboardHandler = new KeyboardHandler(this);
+    connect(m_keyboardHandler, SIGNAL(nextPressed()), this, SLOT(nextCue()));
+    connect(m_keyboardHandler, SIGNAL(prevPressed()), this, SLOT(prevCue()));
+    connect(m_keyboardHandler, SIGNAL(nextQBPagePressed()), this, SLOT(nextQBPage()));
+    connect(m_keyboardHandler, SIGNAL(prevQBPagePressed()), this, SLOT(prevQBPage()));
+    connect(m_keyboardHandler, SIGNAL(stopPressed()), this, SLOT(stopCues()));
+    connect(m_keyboardHandler, SIGNAL(run0Pressed()), this, SLOT(runQB0()));
+    connect(m_keyboardHandler, SIGNAL(run1Pressed()), this, SLOT(runQB1()));
+    connect(m_keyboardHandler, SIGNAL(run2Pressed()), this, SLOT(runQB2()));
+    connect(m_keyboardHandler, SIGNAL(run3Pressed()), this, SLOT(runQB3()));
+    connect(m_keyboardHandler, SIGNAL(run4Pressed()), this, SLOT(runQB4()));
+    connect(m_keyboardHandler, SIGNAL(run5Pressed()), this, SLOT(runQB5()));
+    connect(m_keyboardHandler, SIGNAL(run6Pressed()), this, SLOT(runQB6()));
+    connect(m_keyboardHandler, SIGNAL(run7Pressed()), this, SLOT(runQB7()));
+    connect(m_keyboardHandler, SIGNAL(run8Pressed()), this, SLOT(runQB8()));
+    connect(m_keyboardHandler, SIGNAL(run9Pressed()), this, SLOT(runQB9()));
 }
 
 MainWindow::~MainWindow()
@@ -150,6 +165,108 @@ void MainWindow::prevCue()
     }
 }
 
+void MainWindow::stopCues()
+{
+    //    BaseCue *tCue = m_cues.at(m_activeCueNumber);
+    //    tCue->endCue();
+        setActiveCue(-1);
+}
+
+void MainWindow::nextQBPage()
+{
+    if(m_qbActivePage+1 < m_qbPages.length())
+    {
+        ui->quickButtonPageBox->setCurrentIndex(m_qbActivePage+1);
+    }
+}
+
+void MainWindow::prevQBPage()
+{
+    if(m_qbActivePage > 0)
+    {
+        ui->quickButtonPageBox->setCurrentIndex(m_qbActivePage-1);
+    }
+}
+
+void MainWindow::runQB0()
+{
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(0))
+    {
+        m_qbPages.at(m_qbActivePage)->getCue(0)->startCue();
+    }
+}
+
+void MainWindow::runQB1()
+{
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(1))
+    {
+        m_qbPages.at(m_qbActivePage)->getCue(1)->startCue();
+    }
+}
+
+void MainWindow::runQB2()
+{
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(2))
+    {
+        m_qbPages.at(m_qbActivePage)->getCue(2)->startCue();
+    }
+}
+
+void MainWindow::runQB3()
+{
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(3))
+    {
+        m_qbPages.at(m_qbActivePage)->getCue(3)->startCue();
+    }
+}
+
+void MainWindow::runQB4()
+{
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(4))
+    {
+        m_qbPages.at(m_qbActivePage)->getCue(4)->startCue();
+    }
+}
+
+void MainWindow::runQB5()
+{
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(5))
+    {
+        m_qbPages.at(m_qbActivePage)->getCue(5)->startCue();
+    }
+}
+
+void MainWindow::runQB6()
+{
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(6))
+    {
+        m_qbPages.at(m_qbActivePage)->getCue(6)->startCue();
+    }
+}
+
+void MainWindow::runQB7()
+{
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(7))
+    {
+        m_qbPages.at(m_qbActivePage)->getCue(7)->startCue();
+    }
+}
+
+void MainWindow::runQB8()
+{
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(8))
+    {
+        m_qbPages.at(m_qbActivePage)->getCue(8)->startCue();
+    }
+}
+
+void MainWindow::runQB9()
+{
+    if(m_qbPages.at(m_qbActivePage)->getCueExists(9))
+    {
+        m_qbPages.at(m_qbActivePage)->getCue(9)->startCue();
+    }
+}
 
 //Re-render cuelist, used to keep vector the same as GUI
 void MainWindow::updateCuelist()
@@ -345,9 +462,7 @@ void MainWindow::on_moveCueDownButton_clicked()
 
 void MainWindow::on_stopButton_clicked()
 {
-//    BaseCue *tCue = m_cues.at(m_activeCueNumber);
-//    tCue->endCue();
-    setActiveCue(-1);
+    stopCues();
 }
 
 void MainWindow::on_startButton_clicked()
@@ -405,60 +520,60 @@ void MainWindow::on_quickButtonPageBox_currentIndexChanged(int index)
 
 void MainWindow::on_prevPageQuickButton_clicked()
 {
-    ui->quickButtonPageBox->setCurrentIndex(m_qbActivePage-1);
+    prevQBPage();
 }
 
 void MainWindow::on_nextPageQuickButton_clicked()
 {
-    ui->quickButtonPageBox->setCurrentIndex(m_qbActivePage+1);
+    nextQBPage();
 }
 
 void MainWindow::on_quickButton0_clicked()
 {
-    m_qbPages.at(m_qbActivePage)->getCue(0)->startCue();
+    runQB0();
 }
 
 void MainWindow::on_quickButton1_clicked()
 {
-    m_qbPages.at(m_qbActivePage)->getCue(1)->startCue();
+    runQB1();
 }
 
 void MainWindow::on_quickButton2_clicked()
 {
-    m_qbPages.at(m_qbActivePage)->getCue(2)->startCue();
+    runQB2();
 }
 
 void MainWindow::on_quickButton3_clicked()
 {
-    m_qbPages.at(m_qbActivePage)->getCue(3)->startCue();
+    runQB3();
 }
 
 void MainWindow::on_quickButton4_clicked()
 {
-    m_qbPages.at(m_qbActivePage)->getCue(4)->startCue();
+    runQB4();
 }
 
 void MainWindow::on_quickButton5_clicked()
 {
-    m_qbPages.at(m_qbActivePage)->getCue(5)->startCue();
+    runQB5();
 }
 
 void MainWindow::on_quickButton6_clicked()
 {
-    m_qbPages.at(m_qbActivePage)->getCue(6)->startCue();
+    runQB6();
 }
 
 void MainWindow::on_quickButton7_clicked()
 {
-    m_qbPages.at(m_qbActivePage)->getCue(7)->startCue();
+    runQB7();
 }
 
 void MainWindow::on_quickButton8_clicked()
 {
-    m_qbPages.at(m_qbActivePage)->getCue(8)->startCue();
+    runQB8();
 }
 
 void MainWindow::on_quickButton9_clicked()
 {
-    m_qbPages.at(m_qbActivePage)->getCue(9)->startCue();
+    runQB9();
 }

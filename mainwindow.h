@@ -32,6 +32,19 @@ public:
 private slots:
     void nextCue();
     void prevCue();
+    void nextQBPage();
+    void prevQBPage();
+    void stopCues();
+    void runQB0();
+    void runQB1();
+    void runQB2();
+    void runQB3();
+    void runQB4();
+    void runQB5();
+    void runQB6();
+    void runQB7();
+    void runQB8();
+    void runQB9();
     void on_editCueButton_clicked();
     void on_addCueButton_clicked();
     void on_removeCueButton_clicked();

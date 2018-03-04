@@ -2,7 +2,7 @@
 
 KeyboardHandler::KeyboardHandler(QWidget *parent)
 {
-    m_nextKey = QKeySequence(Qt::Key_Enter);
+    m_nextKey = QKeySequence(Qt::Key_Return);
     m_prevKey = QKeySequence(Qt::Key_Backslash);
     m_startKey = QKeySequence();
     m_stopKey = QKeySequence();
