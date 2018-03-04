@@ -1,9 +1,10 @@
 #ifndef KEYBOARDHANDLER_H
 #define KEYBOARDHANDLER_H
 
-#include <QObject>
-#include <QShortcut>
 #include <QKeySequence>
+#include <QObject>
+#include <QSettings>
+#include <QShortcut>
 
 class KeyboardHandler : public QObject
 {
@@ -116,6 +117,8 @@ private:
     QShortcut *m_run7Shortcut;
     QShortcut *m_run8Shortcut;
     QShortcut *m_run9Shortcut;
+
+
 };
 
 #endif // KEYBOARDHANDLER_H
