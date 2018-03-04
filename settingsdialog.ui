@@ -49,7 +49,7 @@
               </widget>
              </item>
              <item row="0" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit">
+              <widget class="QKeySequenceEdit" name="nextKeySequenceEdit">
                <property name="keySequence">
                 <string>Return</string>
                </property>
@@ -63,7 +63,7 @@
               </widget>
              </item>
              <item row="1" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_2">
+              <widget class="QKeySequenceEdit" name="prevKeySequenceEdit">
                <property name="keySequence">
                 <string>\</string>
                </property>
@@ -77,7 +77,7 @@
               </widget>
              </item>
              <item row="2" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_3"/>
+              <widget class="QKeySequenceEdit" name="startKeySequenceEdit"/>
              </item>
              <item row="3" column="0">
               <widget class="QLabel" name="label_4">
@@ -94,7 +94,7 @@
               </widget>
              </item>
              <item row="4" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_4">
+              <widget class="QKeySequenceEdit" name="nextQBPageKeySequenceEdit">
                <property name="keySequence">
                 <string>=</string>
                </property>
@@ -178,80 +178,80 @@
               </widget>
              </item>
              <item row="3" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_5"/>
+              <widget class="QKeySequenceEdit" name="stopKeySequenceEdit"/>
              </item>
              <item row="5" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_6">
+              <widget class="QKeySequenceEdit" name="prevQBPageKeySequenceEdit">
                <property name="keySequence">
                 <string>-</string>
                </property>
               </widget>
              </item>
              <item row="6" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_7">
+              <widget class="QKeySequenceEdit" name="run1KeySequenceEdit">
                <property name="keySequence">
                 <string>1</string>
                </property>
               </widget>
              </item>
              <item row="7" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_8">
+              <widget class="QKeySequenceEdit" name="run2KeySequenceEdit">
                <property name="keySequence">
                 <string>2</string>
                </property>
               </widget>
              </item>
              <item row="8" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_9">
+              <widget class="QKeySequenceEdit" name="run3KeySequenceEdit">
                <property name="keySequence">
                 <string>3</string>
                </property>
               </widget>
              </item>
              <item row="9" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_10">
+              <widget class="QKeySequenceEdit" name="run4KeySequenceEdit">
                <property name="keySequence">
                 <string>4</string>
                </property>
               </widget>
              </item>
              <item row="12" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_11">
+              <widget class="QKeySequenceEdit" name="run7KeySequenceEdit">
                <property name="keySequence">
                 <string>7</string>
                </property>
               </widget>
              </item>
              <item row="10" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_12">
+              <widget class="QKeySequenceEdit" name="run5KeySequenceEdit">
                <property name="keySequence">
                 <string>5</string>
                </property>
               </widget>
              </item>
              <item row="11" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_13">
+              <widget class="QKeySequenceEdit" name="run6KeySequenceEdit">
                <property name="keySequence">
                 <string>6</string>
                </property>
               </widget>
              </item>
              <item row="13" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_14">
+              <widget class="QKeySequenceEdit" name="run8KeySequenceEdit">
                <property name="keySequence">
                 <string>8</string>
                </property>
               </widget>
              </item>
              <item row="14" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_15">
+              <widget class="QKeySequenceEdit" name="run9KeySequenceEdit">
                <property name="keySequence">
                 <string>9</string>
                </property>
               </widget>
              </item>
              <item row="15" column="1">
-              <widget class="QKeySequenceEdit" name="keySequenceEdit_16">
+              <widget class="QKeySequenceEdit" name="run0KeySequenceEdit">
                <property name="keySequence">
                 <string>0</string>
                </property>

@@ -278,7 +278,11 @@ void MainWindow::on_actionNew_triggered()
 void MainWindow::on_actionSettings_triggered()
 {
     m_settings = new SettingsDialog();
-    m_settings->exec();
+    m_settings->setKeyboardHandler(m_keyboardHandler);
+    if(m_settings->exec())
+    {
+        m_settings->updateKeyboardHandler();
+    }
 }
 
 void MainWindow::on_cueListWidget_currentRowChanged(int currentRow)

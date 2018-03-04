@@ -32,63 +32,34 @@ public:
 private slots:
     void nextCue();
     void prevCue();
-
     void on_editCueButton_clicked();
-
     void on_addCueButton_clicked();
-
     void on_removeCueButton_clicked();
-
     void on_actionNew_triggered();
-
     void on_actionSettings_triggered();
-
     void on_cueListWidget_currentRowChanged(int currentRow);
-
     void on_moveCueUpButton_clicked();
-
     void on_moveCueDownButton_clicked();
-
     void on_stopButton_clicked();
-
     void on_startButton_clicked();
-
     void on_nextButton_clicked();
-
     void on_prevButton_clicked();
-
     void on_actionSave_triggered();
-
     void on_editQuickButton_clicked();
-
     void on_actionOpen_triggered();
-
     void on_actionSave_As_triggered();
-
     void on_quickButtonPageBox_currentIndexChanged(int index);
-
     void on_prevPageQuickButton_clicked();
-
     void on_nextPageQuickButton_clicked();
-
     void on_quickButton0_clicked();
-
     void on_quickButton1_clicked();
-
     void on_quickButton2_clicked();
-
     void on_quickButton3_clicked();
-
     void on_quickButton4_clicked();
-
     void on_quickButton5_clicked();
-
     void on_quickButton6_clicked();
-
     void on_quickButton7_clicked();
-
     void on_quickButton8_clicked();
-
     void on_quickButton9_clicked();
 
 private:

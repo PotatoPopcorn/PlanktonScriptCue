@@ -3,6 +3,8 @@
 
 #include <QDialog>
 
+#include "keyboardhandler.h"
+
 namespace Ui {
 class SettingsDialog;
 }
@@ -15,8 +17,13 @@ public:
     explicit SettingsDialog(QWidget *parent = 0);
     ~SettingsDialog();
 
+    void setKeyboardHandler(KeyboardHandler* keyboard);
+    KeyboardHandler* updateKeyboardHandler();
+
 private:
     Ui::SettingsDialog *ui;
+
+    KeyboardHandler *m_keyboardHandler;
 };
 
 /*TODO:
