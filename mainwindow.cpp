@@ -290,9 +290,9 @@ void MainWindow::updateCuelist()
 
     ui->editCueButton->setEnabled(false);
     ui->removeCueButton->setEnabled(false);
+    ui->duplicateButton->setEnabled(false);
     ui->moveCueDownButton->setEnabled(false);
     ui->moveCueUpButton->setEnabled(false);
-    ui->startButton->setEnabled(false);
 }
 
 //Update Active Cue, Ensures appropriate buttons are up to date.
@@ -328,9 +328,9 @@ void MainWindow::setActiveCue(int i)
         ui->addCueButton->setEnabled(false);
         ui->editCueButton->setEnabled(false);
         ui->removeCueButton->setEnabled(false);
+        ui->duplicateButton->setEnabled(false);
         ui->moveCueDownButton->setEnabled(false);
         ui->moveCueUpButton->setEnabled(false);
-        ui->startButton->setEnabled(false);
     }
     if (i == m_cues.length()-1)
     {
@@ -415,6 +415,7 @@ void MainWindow::on_cueListWidget_currentRowChanged(int currentRow)
     {
         ui->editCueButton->setEnabled(false);
         ui->removeCueButton->setEnabled(false);
+        ui->duplicateButton->setEnabled(false);
         ui->moveCueDownButton->setEnabled(false);
         ui->moveCueUpButton->setEnabled(false);
         ui->startButton->setEnabled(false);
@@ -441,6 +442,7 @@ void MainWindow::on_cueListWidget_currentRowChanged(int currentRow)
         ui->editCueButton->setEnabled(true);
         ui->removeCueButton->setEnabled(true);
         ui->startButton->setEnabled(true);
+        ui->duplicateButton->setEnabled(true);
     }
 }
 

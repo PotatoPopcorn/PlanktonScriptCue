@@ -48,7 +48,7 @@
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>Start</string>
+           <string>Jump</string>
           </property>
          </widget>
         </item>
@@ -109,6 +109,16 @@
           </property>
           <property name="text">
            <string>Move Down</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="duplicateButton">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="text">
+           <string>Duplicate</string>
           </property>
          </widget>
         </item>
