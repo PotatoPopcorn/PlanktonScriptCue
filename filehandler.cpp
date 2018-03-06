@@ -29,11 +29,20 @@ bool FileHandler::open(QVector<BaseCue*> &cueList, QVector<QuickButtonPage*> &qb
     }
 
     QJsonArray qbArray = loadDoc.object()["qbPages"].toArray();
-    for(int i = 0; i < qbArray.size(); i++){
-        QJsonObject pageObject = qbArray[i].toObject();
+    if(qbArray.size() == 0)
+    {
         QuickButtonPage *nextPage = new QuickButtonPage();
-        nextPage->load(pageObject);
         qbPages.append(nextPage);
+    }
+    else
+    {
+        for(int i = 0; i < qbArray.size(); i++)
+        {
+            QJsonObject pageObject = qbArray[i].toObject();
+            QuickButtonPage *nextPage = new QuickButtonPage();
+            nextPage->load(pageObject);
+            qbPages.append(nextPage);
+        }
     }
 
     qDebug() << "Opened";
