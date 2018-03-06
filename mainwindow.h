@@ -75,6 +75,8 @@ private slots:
     void on_quickButton8_clicked();
     void on_quickButton9_clicked();
 
+    void on_duplicateButton_clicked();
+
 private:
     int m_activeCueNumber = -1;
     int m_qbActivePage = 0;

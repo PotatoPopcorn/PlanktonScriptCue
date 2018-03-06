@@ -579,3 +579,19 @@ void MainWindow::on_quickButton9_clicked()
 {
     runQB9();
 }
+
+void MainWindow::on_duplicateButton_clicked()
+{
+    //TODO: Implement Jump Data
+    int cueNum = ui->cueListWidget->currentIndex().row();
+    BaseCue *oldCue = m_cues.at(cueNum);
+    BaseCue *newCue = new BaseCue();
+    newCue->setArguments(oldCue->getArguments());
+    newCue->setProgram(oldCue->getProgram());
+    newCue->setName(oldCue->getName());
+    newCue->setJumpOnEnd(oldCue->getJumpOnEnd());
+    newCue->setEndOnNext(oldCue->getEndOnNext());
+    m_cues.push_back(newCue);
+    updateCuelist();
+
+}
