@@ -7,16 +7,16 @@ FileHandler::FileHandler()
 
 bool FileHandler::open(QVector<BaseCue*> &cueList, QVector<QuickButtonPage*> &qbPages, QString path)
 {
-    m_openFile=path;
-    m_fileOpen=true;
     qDebug() << "Opening ...";
-    cueList.clear();
-    qbPages.clear();
     QFile loadFile(path);
     if(!loadFile.open(QIODevice::ReadOnly)){
         qWarning("Couldn't read file");
         return false;
     }
+    m_openFile=path;
+    m_fileOpen=true;
+    cueList.clear();
+    qbPages.clear();
 
     QByteArray saveData = loadFile.readAll();
 
